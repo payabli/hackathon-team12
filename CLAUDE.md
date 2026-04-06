@@ -7,15 +7,16 @@ No build tools, no npm, no bundler. Must open directly in a browser or with `npx
 
 ## What To Build
 
-A tool for Payabli's SRE and engineering team. The user enters one or more Linear ticket IDs
-(e.g. `SRE-4421` or `SRE-4421, SRE-4418`), clicks **Analyze**, and the page:
+A tool for Payabli's SRE and engineering team. The user enters one Linear ticket ID
+(e.g. `SRE-4421` or `SRE-4421`) or some problem description, clicks **Analyze**, and the page:
 
-1. Fetches each ticket from Linear (title, description, comments, metadata)
-2. Searches Slack help channels and SRE channels for related messages
-3. Checks SRE system health alerts from `#sre-alerts` and `#sre-prod-bug-alerts`
-4. If a transaction ID is found in the ticket, fetches it from the Payabli API
-5. Sends all gathered context to the Anthropic API and renders an AI copilot summary
-6. Shows a numbered "Suggested Solutions" section with per-step owners
+1. Fetches each ticket from Linear (title, description, comments, metadata) by ticket id 
+2. If not ticket id use the problem description to search
+3. Searches Slack help channels and SRE channels for related messages
+4. Checks SRE system health alerts from `#sre-alerts` and `#sre-prod-bug-alerts`
+5. If a transaction ID is found in the ticket, fetches it from the Payabli API
+6. Sends all gathered context to the Anthropic API and renders an AI copilot summary
+7. Shows a numbered "Suggested Solutions" section with per-step owners
 
 ---
 
